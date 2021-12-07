@@ -6,7 +6,7 @@
       :class="{ disabled: activePage === 1 }"
       @click="activePage !== 1 && $emit('change-page', activePage - 1)"
     >
-      <a href="#!">Назад</a>
+      <a href="#">Назад</a>
     </li>
 
     <!-- allItems: [], // - массив массивов -->
@@ -26,7 +26,7 @@
       :class="{ disabled: activePage === allPages }"
       @click="activePage !== allPages && $emit('change-page', activePage + 1)"
     >
-      <a href="#!">Вперед</a>
+      <a href="#">Вперед</a>
     </li>
   </ul>
 </template>

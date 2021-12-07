@@ -29,7 +29,7 @@
         class="input"
         :class="{ input__disabled: !selectColumn || !selectСondition }"
         :type="!selectColumn || selectColumn === 'name' ? 'text' : 'number'"
-        minlength="1"
+        minlength="2"
         maxlength="25"
         :value="inputValue"
         :disabled="!selectColumn || !selectСondition"
@@ -40,6 +40,7 @@
     </label>
   </div>
 </template>
+
 
 <script>
 import dataArray from '../assets/data'
@@ -160,6 +161,7 @@ export default {
   },
 }
 </script>
+
 
 <style scoped>
 .select__container {

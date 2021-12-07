@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import '~materialize-css/dist/css/materialize.min.css';
 
 .app {

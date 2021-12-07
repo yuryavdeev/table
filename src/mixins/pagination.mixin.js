@@ -30,7 +30,6 @@ export default {
     renderPage(page) {
       this.pageItems = this.allItems[page - 1]
       page ? this.activePage = page : this.activePage = 1
-      // if (page) {this.activePage = page}
     }
   }
 }

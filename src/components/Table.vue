@@ -14,7 +14,7 @@
       </thead>
 
       <tbody>
-        <!-- pageItems - из миксины - массив карточек на одну страницу -->
+        <!-- pageItems - из миксины - массив записей на одну страницу -->
         <tr v-for="item in pageItems" :key="item.code">
           <td>{{ item.date }}</td>
           <td>{{ item.name }}</td>
