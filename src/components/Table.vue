@@ -16,10 +16,18 @@
       <tbody>
         <!-- pageItems - из миксины - массив записей на одну страницу -->
         <tr v-for="item in pageItems" :key="item.code">
-          <td>{{ item.date }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.amount }}</td>
-          <td>{{ item.distance }}</td>
+          <td>
+            {{ item.date }}
+          </td>
+          <td>
+            {{ item.name }}
+          </td>
+          <td>
+            {{ item.amount }}
+          </td>
+          <td>
+            {{ item.distance }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -37,39 +45,42 @@
 </template>
 
 <script>
-import dataArray from '../assets/data'
-import Sorting from './Sorting.vue'
-import Pagination from './Pagination.vue'
-import paginationMixin from '../mixins/pagination.mixin'
+  import dataArray from '../assets/data'
+  import Sorting from './Sorting.vue'
+  import Pagination from './Pagination.vue'
+  import paginationMixin from '../mixins/pagination.mixin'
 
-export default {
-  mixins: [paginationMixin],
+  export default {
+    mixins: [paginationMixin],
 
-  data() {
-    return {
-      sortedArray: true,
-    }
-  },
-
-  methods: {
-    sortData(sortedArray) {
-      sortedArray.length ? (this.sortedArray = true) : (this.sortedArray = false)
-      this.setupPagination(sortedArray)
+    data() {
+      return {
+        sortedArray: true,
+      }
     },
-  },
 
-  mounted() {
-    this.setupPagination(dataArray)
-  },
+    methods: {
+      sortData(sortedArray) {
+        sortedArray.length ? (this.sortedArray = true) : (this.sortedArray = false)
+        this.setupPagination(sortedArray)
+      },
+    },
 
-  components: { Sorting, Pagination },
-}
+    mounted() {
+      this.setupPagination(dataArray)
+    },
+
+    components: {
+      Sorting,
+      Pagination,
+    },
+  }
 </script>
 
 <style scoped>
-th:first-of-type,
-th:last-of-type,
-th:nth-last-of-type(2) {
-  width: 15%;
-}
+  th:first-of-type,
+  th:last-of-type,
+  th:nth-last-of-type(2) {
+    width: 15%;
+  }
 </style>
